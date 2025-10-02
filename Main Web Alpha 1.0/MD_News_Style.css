@@ -493,6 +493,7 @@ body {
     grid-template-columns: 2fr 1fr;
     gap: 40px;
     margin-top: 30px;
+    align-items: start;
 }
 
 .breaking-news-video {
@@ -514,6 +515,10 @@ body {
     color: #000;
     border-bottom: 2px solid #d32f2f;
     padding-bottom: 10px;
+}
+
+.context-content {
+    min-height: 600px;
 }
 
 .context-content p {
@@ -557,6 +562,57 @@ body {
     left: 10px;
 }
 
+.reporter-pov {
+    background-color: #fff3e0;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 25px 0;
+    border-left: 4px solid #ff9800;
+}
+
+.reporter-pov h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #e65100;
+}
+
+.reporter-pov p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.reporter-name {
+    font-style: italic;
+    color: #666;
+    font-size: 14px;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.additional-info {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 25px 0;
+}
+
+.additional-info h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.additional-info p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+}
+
 .news-meta {
     display: flex;
     gap: 20px;
@@ -573,6 +629,12 @@ body {
 
 .news-category {
     color: #d32f2f;
+}
+
+/* Remove duration badges from specific breaking news videos */
+#economic-page .duration-badge,
+#cultural-page .duration-badge {
+    display: none;
 }
 
 /* Donate Page Section */
@@ -665,423 +727,6 @@ body {
     color: #b71c1c;
 }
 
-/* Subscription Plans */
-.subscription-plans {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.subscription-card {
-    background-color: #f9f9f9;
-    padding: 30px;
-    border-radius: 8px;
-    text-align: center;
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid #e0e0e0;
-}
-
-.subscription-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
-
-.subscription-card.featured {
-    border-color: #d32f2f;
-    transform: scale(1.05);
-}
-
-.subscription-card.featured:hover {
-    transform: scale(1.05) translateY(-5px);
-}
-
-.popular-badge {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #d32f2f;
-    color: white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.subscription-card h3 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: #000;
-}
-
-.price {
-    font-size: 36px;
-    font-weight: 700;
-    color: #d32f2f;
-    margin-bottom: 20px;
-}
-
-.price span {
-    font-size: 16px;
-    color: #666;
-}
-
-.benefits-list {
-    list-style: none;
-    text-align: left;
-    margin-bottom: 25px;
-}
-
-.benefits-list li {
-    padding: 8px 0;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-}
-
-.benefits-list i {
-    margin-right: 10px;
-    width: 16px;
-}
-
-.benefits-list .fa-check {
-    color: #4caf50;
-}
-
-.benefits-list .fa-times {
-    color: #f44336;
-}
-
-.subscribe-btn {
-    background-color: #d32f2f;
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-}
-
-.subscribe-btn:hover {
-    background-color: #b71c1c;
-}
-
-.featured-btn {
-    background-color: #000;
-}
-
-.featured-btn:hover {
-    background-color: #333;
-}
-
-/* Membership Forms */
-.membership-form, .payment-form {
-    background-color: #f9f9f9;
-    padding: 25px;
-    border-radius: 8px;
-}
-
-.membership-form h2, .payment-form h2 {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #000;
-}
-
-.selected-plan {
-    background-color: #e8f5e9;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    text-align: center;
-    border-left: 4px solid #4caf50;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #333;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus {
-    outline: none;
-    border-color: #d32f2f;
-}
-
-.register-btn, .payment-btn {
-    background-color: #d32f2f;
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.register-btn:hover, .payment-btn:hover {
-    background-color: #b71c1c;
-}
-
-.back-btn {
-    background-color: #666;
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-}
-
-.back-btn:hover {
-    background-color: #555;
-}
-
-/* Profile Section */
-.profile-section {
-    background-color: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.profile-container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.profile-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.profile-forms {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
-.auth-form-container {
-    background-color: #f9f9f9;
-    padding: 30px;
-    border-radius: 8px;
-}
-
-.auth-tabs {
-    display: flex;
-    margin-bottom: 25px;
-    border-bottom: 2px solid #e0e0e0;
-}
-
-.auth-tab {
-    background: none;
-    border: none;
-    padding: 12px 25px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-bottom: 3px solid transparent;
-}
-
-.auth-tab.active {
-    color: #d32f2f;
-    border-bottom-color: #d32f2f;
-}
-
-.auth-tab:hover:not(.active) {
-    background-color: #f0f0f0;
-}
-
-.auth-form {
-    transition: all 0.3s ease;
-}
-
-.form-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.remember-me, .newsletter {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    color: #666;
-}
-
-.forgot-password {
-    color: #d32f2f;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
-}
-
-.forgot-password:hover {
-    color: #b71c1c;
-}
-
-.auth-btn {
-    background-color: #d32f2f;
-    color: white;
-    border: none;
-    padding: 14px 30px;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-}
-
-.auth-btn:hover {
-    background-color: #b71c1c;
-}
-
-.profile-benefits {
-    background-color: #f9f9f9;
-    padding: 30px;
-    border-radius: 8px;
-}
-
-.profile-benefits h3 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #000;
-}
-
-.profile-benefits .benefits-list {
-    list-style: none;
-}
-
-.profile-benefits .benefits-list li {
-    padding: 12px 0;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.profile-benefits .benefits-list li:last-child {
-    border-bottom: none;
-}
-
-.profile-benefits .benefits-list i {
-    color: #d32f2f;
-    margin-right: 15px;
-    font-size: 18px;
-    width: 20px;
-}
-
-/* Footer */
-.footer {
-    background-color: #1a1a1a;
-    color: #fff;
-    margin-top: 60px;
-    padding: 40px 0 20px;
-}
-
-.footer-content {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 30px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    margin-bottom: 30px;
-}
-
-.footer-section h4 {
-    font-size: 18px;
-    margin-bottom: 15px;
-    color: #d32f2f;
-}
-
-.footer-section p {
-    font-size: 14px;
-    color: #ccc;
-    line-height: 1.6;
-}
-
-.footer-section ul {
-    list-style: none;
-}
-
-.footer-section ul li {
-    margin-bottom: 10px;
-}
-
-.footer-section ul li a {
-    color: #ccc;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s;
-}
-
-.footer-section ul li a:hover {
-    color: #d32f2f;
-}
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-}
-
-.social-icons a {
-    color: #ccc;
-    font-size: 20px;
-    transition: color 0.3s;
-}
-
-.social-icons a:hover {
-    color: #d32f2f;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid #333;
-    color: #999;
-    font-size: 14px;
-}
-
-/* Add these new styles to your existing CSS file */
-
 /* Subscription Section */
 .subscription-section {
     background-color: white;
@@ -1110,7 +755,7 @@ body {
     margin-bottom: 40px;
 }
 
-/* Make subscription cards equal height */
+/* Subscription Plans */
 .subscription-plans {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1329,75 +974,215 @@ body {
     background-color: #b71c1c;
 }
 
-/* Breaking News Additional Content */
-.reporter-pov {
-    background-color: #fff3e0;
-    padding: 20px;
+/* Profile Section */
+.profile-section {
+    background-color: white;
+    padding: 40px;
     border-radius: 8px;
-    margin: 25px 0;
-    border-left: 4px solid #ff9800;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.reporter-pov h4 {
-    font-size: 18px;
+.profile-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile-forms {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.auth-form-container {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.auth-tabs {
+    display: flex;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.auth-tab {
+    background: none;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
     font-weight: 600;
-    margin-bottom: 15px;
-    color: #e65100;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
 }
 
-.reporter-pov p {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 10px;
+.auth-tab.active {
+    color: #d32f2f;
+    border-bottom-color: #d32f2f;
 }
 
-.reporter-name {
-    font-style: italic;
-    color: #666;
+.auth-tab:hover:not(.active) {
+    background-color: #f0f0f0;
+}
+
+.auth-form {
+    transition: all 0.3s ease;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me, .newsletter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     font-size: 14px;
-    text-align: right;
-    margin-top: 10px;
+    color: #666;
 }
 
-.additional-info {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 8px;
-    margin: 25px 0;
+.forgot-password {
+    color: #d32f2f;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
 }
 
-.additional-info h4 {
-    font-size: 18px;
+.forgot-password:hover {
+    color: #b71c1c;
+}
+
+.auth-btn {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 4px;
+    font-size: 16px;
     font-weight: 600;
-    margin-bottom: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.auth-btn:hover {
+    background-color: #b71c1c;
+}
+
+.profile-benefits {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.profile-benefits h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
     color: #000;
 }
 
-.additional-info p {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 15px;
+.profile-benefits .benefits-list {
+    list-style: none;
 }
 
-/* Remove duration badges from specific breaking news videos */
-#economic-page .duration-badge,
-#cultural-page .duration-badge {
-    display: none;
+.profile-benefits .benefits-list li {
+    padding: 12px 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-/* Ensure breaking news containers have proper spacing */
-.breaking-news-container {
+.profile-benefits .benefits-list li:last-child {
+    border-bottom: none;
+}
+
+.profile-benefits .benefits-list i {
+    color: #d32f2f;
+    margin-right: 15px;
+    font-size: 18px;
+    width: 20px;
+}
+
+/* Footer */
+.footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    margin-top: 60px;
+    padding: 40px 0 20px;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
-    margin-top: 30px;
-    align-items: start;
+    margin-bottom: 30px;
 }
 
-.context-content {
-    min-height: 600px;
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #d32f2f;
+}
+
+.footer-section p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #d32f2f;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #ccc;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #d32f2f;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    color: #999;
+    font-size: 14px;
 }
 
 /* Responsive adjustments */
@@ -1414,6 +1199,56 @@ body {
     .subscription-card.featured:hover {
         transform: translateY(-5px);
     }
+    
+    .subscription-container,
+    .donate-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .breaking-news-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-forms {
+        grid-template-columns: 1fr;
+    }
 }
 
-/* Keep all your existing CSS styles and add these new ones at the end */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .header-left {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .main-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .stories-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
