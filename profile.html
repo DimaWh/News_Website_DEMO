@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Account - MoldovaNews</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="header-left">
+                <div class="logo" onclick="location.href='index.html'">MoldovaNews</div>
+                <nav class="main-nav">
+                    <a href="live.html" class="nav-btn">Live</a>
+                    <a href="video.html" class="nav-btn">Video</a>
+                    <a href="donate.html" class="nav-btn donate-btn">Donate</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <a href="subscriptions.html" class="nav-btn subscription-nav-btn">Subscriptions</a>
+                <div class="account-icon" onclick="location.href='profile.html'">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- News Ticker -->
+    <div class="news-ticker">
+        <div class="ticker-container">
+            <span class="ticker-label">Breaking News</span>
+            <div class="ticker-items">
+                <a href="breaking-news-parliament.html">Parliament discusses new reforms</a>
+                <a href="breaking-news-economic.html">Economic growth forecast</a>
+                <a href="breaking-news-cultural.html">Cultural festival in Chișinău</a>
+                <a href="breaking-news-international.html">International relations update</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROFILE PAGE CONTENT -->
+    <main class="main-content-full">
+        <section class="profile-section">
+            <div class="profile-container">
+                <div class="profile-header">
+                    <h1 class="page-main-title">Your Account</h1>
+                    <p class="page-subtitle">Sign in or create your MoldovaNews account</p>
+                </div>
+                
+                <div class="profile-forms">
+                    <div class="auth-form-container">
+                        <div class="auth-tabs">
+                            <button class="auth-tab active" onclick="switchAuthTab('signin')">Sign In</button>
+                            <button class="auth-tab" onclick="switchAuthTab('register')">Register</button>
+                        </div>
+                        
+                        <div id="signin-form" class="auth-form">
+                            <form class="membership-form">
+                                <div class="form-group">
+                                    <label for="signin-email">Email Address</label>
+                                    <input type="email" id="signin-email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="signin-password">Password</label>
+                                    <input type="password" id="signin-password" name="password" required>
+                                </div>
+                                <div class="form-options">
+                                    <label class="remember-me">
+                                        <input type="checkbox" name="remember">
+                                        <span>Remember me</span>
+                                    </label>
+                                    <a href="#" class="forgot-password">Forgot password?</a>
+                                </div>
+                                <button type="submit" class="auth-btn">Sign In</button>
+                            </form>
+                        </div>
+                        
+                        <div id="register-form" class="auth-form" style="display: none;">
+                            <form class="membership-form">
+                                <div class="form-group">
+                                    <label for="register-fullname">Full Name</label>
+                                    <input type="text" id="register-fullname" name="fullname" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="register-email">Email Address</label>
+                                    <input type="email" id="register-email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="register-password">Password</label>
+                                    <input type="password" id="register-password" name="password" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="register-confirm">Confirm Password</label>
+                                    <input type="password" id="register-confirm" name="confirm-password" required>
+                                </div>
+                                <div class="form-options">
+                                    <label class="newsletter">
+                                        <input type="checkbox" name="newsletter" checked>
+                                        <span>Send me news and updates</span>
+                                    </label>
+                                </div>
+                                <button type="submit" class="auth-btn">Create Account</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-benefits">
+                        <h3>Why Create an Account?</h3>
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-bookmark"></i> Save your favorite articles</li>
+                            <li><i class="fas fa-bell"></i> Get personalized notifications</li>
+                            <li><i class="fas fa-comment"></i> Join the conversation with comments</li>
+                            <li><i class="fas fa-history"></i> Access your reading history</li>
+                            <li><i class="fas fa-cog"></i> Customize your news preferences</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About MoldovaNews</h4>
+                <p>Your trusted source for news from Moldova and beyond.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MoldovaNews. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

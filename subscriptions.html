@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscriptions - MoldovaNews</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="header-left">
+                <div class="logo" onclick="location.href='index.html'">MoldovaNews</div>
+                <nav class="main-nav">
+                    <a href="live.html" class="nav-btn">Live</a>
+                    <a href="video.html" class="nav-btn">Video</a>
+                    <a href="donate.html" class="nav-btn donate-btn">Donate</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <a href="subscriptions.html" class="nav-btn subscription-nav-btn active">Subscriptions</a>
+                <div class="account-icon" onclick="location.href='profile.html'">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- News Ticker -->
+    <div class="news-ticker">
+        <div class="ticker-container">
+            <span class="ticker-label">Breaking News</span>
+            <div class="ticker-items">
+                <a href="breaking-news-parliament.html">Parliament discusses new reforms</a>
+                <a href="breaking-news-economic.html">Economic growth forecast</a>
+                <a href="breaking-news-cultural.html">Cultural festival in Chișinău</a>
+                <a href="breaking-news-international.html">International relations update</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUBSCRIPTIONS PAGE CONTENT -->
+    <main class="main-content-full">
+        <section class="subscription-section">
+            <div class="subscription-container">
+                <div class="subscription-left">
+                    <h1 class="page-main-title">Become a Member</h1>
+                    <p class="page-subtitle">Support independent journalism and unlock exclusive benefits</p>
+                    
+                    <div class="subscription-plans">
+                        <div class="subscription-card">
+                            <h3>Basic Membership</h3>
+                            <div class="price">$5.99<span>/month</span></div>
+                            <ul class="benefits-list">
+                                <li><i class="fas fa-check"></i> Ad-free browsing experience</li>
+                                <li><i class="fas fa-check"></i> Access to member-only articles</li>
+                                <li><i class="fas fa-check"></i> Early access to video content</li>
+                                <li><i class="fas fa-times"></i> Premium newsletters</li>
+                                <li><i class="fas fa-times"></i> Exclusive live events</li>
+                            </ul>
+                            <button class="subscribe-btn" onclick="showSubscriptionForm('basic')">Subscribe Now</button>
+                        </div>
+                        
+                        <div class="subscription-card featured">
+                            <div class="popular-badge">MOST POPULAR</div>
+                            <h3>Premium Membership</h3>
+                            <div class="price">$10.99<span>/month</span></div>
+                            <ul class="benefits-list">
+                                <li><i class="fas fa-check"></i> All Basic benefits</li>
+                                <li><i class="fas fa-check"></i> Weekly premium newsletters</li>
+                                <li><i class="fas fa-check"></i> Access to exclusive live events</li>
+                                <li><i class="fas fa-check"></i> Download videos for offline viewing</li>
+                                <li><i class="fas fa-times"></i> Personal concierge service</li>
+                            </ul>
+                            <button class="subscribe-btn featured-btn" onclick="showSubscriptionForm('premium')">Subscribe Now</button>
+                        </div>
+                        
+                        <div class="subscription-card">
+                            <h3>Executive Membership</h3>
+                            <div class="price">$20.99<span>/month</span></div>
+                            <ul class="benefits-list">
+                                <li><i class="fas fa-check"></i> All Premium benefits</li>
+                                <li><i class="fas fa-check"></i> Personal concierge service</li>
+                                <li><i class="fas fa-check"></i> Invitations to exclusive events</li>
+                                <li><i class="fas fa-check"></i> Direct line to editorial team</li>
+                                <li><i class="fas fa-check"></i> Behind-the-scenes content</li>
+                            </ul>
+                            <button class="subscribe-btn" onclick="showSubscriptionForm('executive')">Subscribe Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subscription-right">
+                    <div id="subscription-form">
+                        <h2>Complete Your Subscription</h2>
+                        <div class="selected-plan">
+                            <h3 id="plan-name">Premium Membership</h3>
+                            <div id="plan-price" class="price">$10.99<span>/month</span></div>
+                        </div>
+                        <form class="payment-form">
+                            <div class="form-group">
+                                <label for="card-number">Card Number</label>
+                                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiry-date">Expiry Date</label>
+                                    <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="card-name">Name on Card</label>
+                                <input type="text" id="card-name" name="card-name" required>
+                            </div>
+                            <button type="submit" class="payment-btn">Complete Subscription</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About MoldovaNews</h4>
+                <p>Your trusted source for news from Moldova and beyond.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MoldovaNews. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
