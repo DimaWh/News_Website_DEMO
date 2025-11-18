@@ -1,51 +1,85 @@
-// Handle form submissions
+// Dark Mode Toggle Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const signinForm = document.querySelector('#signin-form form');
-    const registerForm = document.querySelector('#register-form form');
-    const paymentForm = document.querySelector('.payment-form');
+    // Create dark mode toggle button
+    const darkModeToggle = document.createElement('button');
+    darkModeToggle.className = 'dark-mode-toggle';
+    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    darkModeToggle.setAttribute('aria-label', 'Toggle dark mode');
     
-    // Highlight active navigation
-    const currentPage = window.location.pathname.split('/').pop();
-    const navLinks = document.querySelectorAll('.nav-btn');
-    
-    navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-            link.classList.add('active');
-        }
-    });
-    
-    // Highlight active breaking news in ticker
-    const tickerLinks = document.querySelectorAll('.ticker-items a');
-    tickerLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-            link.classList.add('active');
-        }
-    });
-    
-    if (signinForm) {
-        signinForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Successfully signed in! Welcome back to MoldovaNews.');
-            window.location.href = 'index.html';
-        });
+    // Insert toggle button into header
+    const headerRight = document.querySelector('.header-right');
+    if (headerRight) {
+        headerRight.insertBefore(darkModeToggle, headerRight.firstChild);
     }
     
-    if (registerForm) {
-        registerForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Account created successfully! Welcome to MoldovaNews.');
-            window.location.href = 'index.html';
-        });
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     }
     
-    if (paymentForm) {
-        paymentForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your subscription! Your membership is now active.');
-            window.location.href = 'index.html';
-        });
+    // Toggle dark mode on button click
+    darkModeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+        
+        // Update icon and save preference
+        if (document.body.classList.contains('dark-mode')) {
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            localStorage.setItem('theme', 'light');
+        }
+    });
+});
+
+// Keep existing form handling code
+const signinForm = document.querySelector('#signin-form form');
+const registerForm = document.querySelector('#register-form form');
+const paymentForm = document.querySelector('.payment-form');
+
+// Highlight active navigation
+const currentPage = window.location.pathname.split('/').pop();
+const navLinks = document.querySelectorAll('.nav-btn');
+
+navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
     }
 });
+
+// Highlight active breaking news in ticker
+const tickerLinks = document.querySelectorAll('.ticker-items a');
+tickerLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+    }
+});
+
+if (signinForm) {
+    signinForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Successfully signed in! Welcome back to MoldovaNews.');
+        window.location.href = 'index.html';
+    });
+}
+
+if (registerForm) {
+    registerForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Account created successfully! Welcome to MoldovaNews.');
+        window.location.href = 'index.html';
+    });
+}
+
+if (paymentForm) {
+    paymentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your subscription! Your membership is now active.');
+        window.location.href = 'index.html';
+    });
+}
 
 function showSubscriptionForm(planType) {
     const planName = document.getElementById('plan-name');

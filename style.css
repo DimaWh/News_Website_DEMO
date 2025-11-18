@@ -1252,3 +1252,251 @@ body {
         gap: 30px;
     }
 }
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    background-color: transparent;
+    border: 2px solid #333;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #333;
+    font-size: 18px;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.1);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+/* Header Dark Mode */
+body.dark-mode .sticky-header {
+    background-color: #2a2a2a;
+    border-bottom-color: #d32f2f;
+}
+
+body.dark-mode .logo {
+    color: #ffffff;
+}
+
+body.dark-mode .nav-btn {
+    color: #e0e0e0;
+}
+
+body.dark-mode .nav-btn:hover {
+    background-color: #3a3a3a;
+}
+
+body.dark-mode .dark-mode-toggle {
+    border-color: #e0e0e0;
+    color: #e0e0e0;
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+    background-color: #3a3a3a;
+}
+
+body.dark-mode .account-icon {
+    color: #e0e0e0;
+}
+
+body.dark-mode .account-icon:hover {
+    color: #d32f2f;
+}
+
+/* News Ticker Dark Mode */
+body.dark-mode .news-ticker {
+    background-color: #b71c1c;
+}
+
+body.dark-mode .ticker-label {
+    background-color: #8b0000;
+}
+
+/* Content Cards Dark Mode */
+body.dark-mode .hero-main,
+body.dark-mode .live-video,
+body.dark-mode .story-card,
+body.dark-mode .sidebar-headlines,
+body.dark-mode .video-page-section,
+body.dark-mode .video-item,
+body.dark-mode .breaking-news-section,
+body.dark-mode .donate-section,
+body.dark-mode .subscription-section,
+body.dark-mode .profile-section {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .breaking-news-video,
+body.dark-mode .breaking-news-context {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .video-info,
+body.dark-mode .story-content {
+    background-color: transparent;
+}
+
+/* Typography Dark Mode */
+body.dark-mode .hero-title,
+body.dark-mode .story-title,
+body.dark-mode .section-title,
+body.dark-mode .page-main-title,
+body.dark-mode .sidebar-title,
+body.dark-mode h1, body.dark-mode h2, 
+body.dark-mode h3, body.dark-mode h4 {
+    color: #ffffff;
+}
+
+body.dark-mode .hero-subtitle,
+body.dark-mode .page-subtitle,
+body.dark-mode .story-time,
+body.dark-mode .video-description,
+body.dark-mode .image-credit {
+    color: #b0b0b0;
+}
+
+/* Links Dark Mode */
+body.dark-mode .headlines-list a,
+body.dark-mode .story-card {
+    color: #e0e0e0;
+}
+
+body.dark-mode .headlines-list a:hover {
+    color: #d32f2f;
+}
+
+/* Category Tags Dark Mode */
+body.dark-mode .story-category {
+    background-color: #3a3a3a;
+    color: #ff6b6b;
+}
+
+/* Context Boxes Dark Mode */
+body.dark-mode .key-points,
+body.dark-mode .additional-info {
+    background-color: #2a2a2a;
+    border-left-color: #d32f2f;
+}
+
+body.dark-mode .reporter-pov {
+    background-color: #2a2a2a;
+    border-left-color: #ff9800;
+}
+
+body.dark-mode .reporter-pov h4 {
+    color: #ff9800;
+}
+
+/* Forms Dark Mode */
+body.dark-mode .form-group input,
+body.dark-mode .auth-form-container,
+body.dark-mode .profile-benefits,
+body.dark-mode #subscription-form,
+body.dark-mode .subscription-card,
+body.dark-mode .charity-card {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode .form-group label {
+    color: #e0e0e0;
+}
+
+body.dark-mode .form-group input:focus {
+    border-color: #d32f2f;
+    box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.3);
+}
+
+body.dark-mode .auth-tabs {
+    border-bottom-color: #444;
+}
+
+body.dark-mode .auth-tab:hover:not(.active) {
+    background-color: #3a3a3a;
+}
+
+/* Selected Plan Dark Mode */
+body.dark-mode .selected-plan {
+    background-color: #1a3a1a;
+    border-left-color: #4caf50;
+}
+
+/* Subscription Cards Dark Mode */
+body.dark-mode .subscription-card {
+    border-color: #444;
+}
+
+body.dark-mode .subscription-card.featured {
+    border-color: #d32f2f;
+}
+
+/* Charity Cards Dark Mode */
+body.dark-mode .charity-card {
+    border-left-color: #d32f2f;
+}
+
+/* Footer Dark Mode */
+body.dark-mode .footer {
+    background-color: #0a0a0a;
+}
+
+body.dark-mode .footer-bottom {
+    border-top-color: #2a2a2a;
+}
+
+/* Meta Info Dark Mode */
+body.dark-mode .news-meta {
+    border-top-color: #444;
+}
+
+body.dark-mode .news-time,
+body.dark-mode .news-category {
+    color: #b0b0b0;
+}
+
+body.dark-mode .news-category {
+    color: #ff6b6b;
+}
+
+/* Video Metadata Dark Mode */
+body.dark-mode .video-meta {
+    color: #b0b0b0;
+}
+
+body.dark-mode .video-views {
+    color: #ff6b6b;
+}
+
+/* Benefits List Dark Mode */
+body.dark-mode .benefits-list li {
+    color: #e0e0e0;
+}
+
+/* Smooth transition for theme switch */
+body,
+.sticky-header,
+.hero-main,
+.live-video,
+.story-card,
+.sidebar-headlines,
+.video-page-section,
+.video-item,
+.subscription-card,
+.charity-card,
+.form-group input {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
