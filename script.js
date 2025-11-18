@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Insert toggle button into header
     const headerRight = document.querySelector('.header-right');
     if (headerRight) {
-        headerRight.insertBefore(darkModeToggle, headerRight.firstChild);
+        headerRight.appendChild(darkModeToggle);
     }
     
     // Check for saved theme preference or default to light mode
